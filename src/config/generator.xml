@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<properties resource="config/jdbc.properties" />
+	<classPathEntry location="${classPath}" />
+	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="flat">
+		<jdbcConnection driverClass="${jdbc.driver}"
+			connectionURL="${jdbc.url}" userId="${jdbc.username}" password="${jdbc.password}" />
+		<!-- javabean映射路径 -->
+		<javaModelGenerator targetPackage="${modelPackage}"
+			targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<!-- mapper xml映射路径 -->
+		<sqlMapGenerator targetPackage="${mapperPackage}"
+			targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 持久层dao映射路径 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="${daoPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!-- 数据库表 以及实体类命名 -->
+		<table schema="CL_DEMO" tableName="sysuser" domainObjectName="Sysuser"
+			enableCountByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" enableUpdateByExample="false"
+			selectByExampleQueryId="false" />
+		<table schema="CL_DEMO" tableName="sysrole" domainObjectName="Sysrole"
+			enableCountByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" enableUpdateByExample="false"
+			selectByExampleQueryId="false" />
+	</context>
+</generatorConfiguration>
